@@ -32,7 +32,7 @@ public class Weighted_Uniform_Strings {
             }
         }
 
-
+//
         for (int i = 0; i<queries.length;i++){
             for (int j = 0;j<listA.size();j++){
                 //System.out.println(queries[i] + " " + listA.get(j));
