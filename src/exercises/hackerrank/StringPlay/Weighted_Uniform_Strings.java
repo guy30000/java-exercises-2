@@ -44,7 +44,7 @@ public class Weighted_Uniform_Strings {
         }
     return result;
 }
-
+///
     public static void main(String[] args) throws IOException {
 
         String s = "abccddde";
