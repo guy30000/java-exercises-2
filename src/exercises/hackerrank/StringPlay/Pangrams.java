@@ -7,36 +7,37 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-
 public class Pangrams {
 
     static String pangrams(String s) {
+        s = s.toLowerCase();
         char[] charString = s.toCharArray();
         Arrays.sort(charString);
-        int foundChar = 0;
 
-        for (int i = foundChar; i<26;i++){
+
+        for (int i = 0; i<26;i++){
+            boolean foundChar = false;
             for (char t: charString) {
                 //System.out.print(t + " --- " + (int)t+ " - ");
-                System.out.println(t + " " + (int)t + " " + i);
-                if ( ((int)t   == 97 + i)) {
-                    System.out.println(((int)t + i) + "  " + (char)(t + i) + " found " + i +" "+ ((int)t + i) + "  " + (97 + i));
-                    continue;
-                    //break;
+                System.out.println(t + " "+ (97+i)  + " "+ (int)t);
+                if (((int)t   == 97 + i)) {
+                    System.out.println(( t + " found " + i +" "+ ((int)t ) + "  " + (97 + i)));
+                    foundChar = true;
+                    //continue;
+                    break;
                 }
             }
+            if (foundChar == false){
+                System.out.println("not pangram");
+            return "not pangram";}
         }
 // ((int)t + i  == 65 + i) ||
-return "thing";
+        System.out.println("pangram");
+return "pangram";
     }
 
-
-
     public static void main(String[] args) throws IOException {
-
-        String s = " abc";
-
+        String s = " We promptly judged antique ivory buckles for the next prize";
         String result = pangrams(s);
-
     }
 }
